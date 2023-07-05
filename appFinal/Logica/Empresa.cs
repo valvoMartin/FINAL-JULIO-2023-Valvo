@@ -74,9 +74,9 @@ namespace Logica
                 {
                     pago.Importe = monto + ((electrico.PorcentajeImpuesto/100)+1);
                 }
-                else
+                if (servicio is Comunicacion comu)
                 {
-                    pago.Importe = monto + 
+                    pago.Importe = monto + comu.CalcularPorcentaje(servicio.Zona);
                 }
                 pago.DniPagador = dniPagador;
                 pago.Id = Pagos.Count;
