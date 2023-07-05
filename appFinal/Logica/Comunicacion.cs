@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    internal class Comunicacion
+    public class Comunicacion : Servicio
     {
+        private double PorcentajeDescuento;
+        
+        public void CalcularPorcentaje(ZonaOperacion zonaOperacion)
+        {
+            if(ZonaOperacion.Cuyo == zonaOperacion)
+            {
+                PorcentajeDescuento = 15;
+            }
+            if (ZonaOperacion.Norte == zonaOperacion)
+            {
+                PorcentajeDescuento = 10;
+            }
+        }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class Class1
+    public class Proveedor
     {
+        public enum Opera{Brasil, Argentina, Mexico}
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public Opera Operacion { get; set; }
+        public double Saldo { get; set; }
     }
 }

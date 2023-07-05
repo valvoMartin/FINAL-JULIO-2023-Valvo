@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    internal class Servicio
+    public abstract class Servicio
     {
+        public enum ZonaOperacion { Cuyo, Norte, Centro, Patagonia }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public int IdProveedor { get; set; }
+        public ZonaOperacion Zona { get; set; }
+
     }
 }

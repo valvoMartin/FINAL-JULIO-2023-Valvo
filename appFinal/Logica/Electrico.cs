@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    internal class Electrico
+    public class Electrico : Servicio
     {
+        public double PorcentajeImpuesto { get; set; }
     }
 }

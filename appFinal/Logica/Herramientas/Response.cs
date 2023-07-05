@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Logica.Herramientas
 {
-    internal class Response
+    public class Response
     {
+        public bool Fallo { get; set; }
+        public string Comentario { get; set; }
     }
 }
