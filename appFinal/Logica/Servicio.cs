@@ -15,5 +15,6 @@ namespace Logica
         public int IdProveedor { get; set; }
         public ZonaOperacion Zona { get; set; }
 
+        //CORRECCION: Falta metodo para obtener la descripción
     }
 }

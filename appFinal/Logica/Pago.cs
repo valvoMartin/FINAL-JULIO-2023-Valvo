@@ -9,7 +9,7 @@ namespace Logica
     public class Pago
     {
         public int Id { get; set; }
-        public DateTime FechaCobro { get; set; } = DateTime.Now;
+        public DateTime FechaCobro { get; set; } = DateTime.Now; //CORRECCION: Incorrecta asignación
         public int DniPagador { get; set; }
         public int IdServicio { get; set; }
         public double Importe { get; set; }

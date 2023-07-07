@@ -18,6 +18,7 @@ namespace Logica
         List<Pago> Pagos;
 
 
+//CORRECCION: No compila
         public bool AltaNuevoServicio(string nombre, string descripcion, int idProveedor, double ?porcentajeImpuesto, ZonaOperacion zonaOperacion)
         {
             if(Proveedores.Any(x=>x.Id == idProveedor))
@@ -72,6 +73,7 @@ namespace Logica
                 Pagos = new List<Pago>();
                 if (servicio is Electrico electrico)
                 {
+                    ////CORRECCION:no esta correctamente calculado el impuesto.
                     pago.Importe = monto + ((electrico.PorcentajeImpuesto/100)+1);
                 }
                 if (servicio is Comunicacion comu)
@@ -84,6 +86,8 @@ namespace Logica
                 
                 
                 Pagos.Add(pago);
+
+                //CORRECCION: Mal asignada la propiedad Fallo
                 return new Response { Fallo = false, Comentario = "Pago Realizado y saldo de Proveedor actualizado." };
             }
             return new Response { Fallo = false, Comentario = "Servicio no encontrado." };
@@ -97,6 +101,8 @@ namespace Logica
                 if(prov.Saldo > monto)
                 {
                     prov.Saldo -= monto;
+
+                    //CORRECCION: Mal asignado la propiedad fallo.
                     return new Response { Fallo = false, Comentario="Retiro de dinero Exitoso." };
                 }
                 return new Response {Fallo= false, Comentario="Saldo del proveedor insuficiente." };
@@ -119,6 +125,7 @@ namespace Logica
                         if( provSelectPais.Id == serv.IdProveedor)
                         {
                             var cant = Pagos.Count(e=>e.IdServicio== serv.IdProveedor);
+                            //CORRECCION: Esto se debia resolver en la clase base.
                             listadoFinal.Add($"La entidad {serv.Nombre} esta gestionada por {provSelectPais.Nombre} y tuvo {cant} pagos realizados en total.");
                         }
                     }

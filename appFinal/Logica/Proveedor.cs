@@ -8,6 +8,7 @@ namespace Logica
 {
     public class Proveedor
     {
+        //CORRECCION:Los enums van en un archivo aparte
         public enum Opera{Brasil, Argentina, Mexico}
         public int Id { get; set; }
         public string Nombre { get; set; }
