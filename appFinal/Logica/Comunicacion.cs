@@ -10,6 +10,7 @@ namespace Logica
     {
         private double PorcentajeDescuento;
         
+        //CORRECCION: No se recibe la zona, ya es parte de la entidad. Incorrecto
         public void CalcularPorcentaje(ZonaOperacion zonaOperacion)
         {
             if(ZonaOperacion.Cuyo == zonaOperacion)
